@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'britecore',
         'USER': 'britecore',
         'PASSWORD': 'britecore',
-        'HOST': 'britecore.cuklxlwr4gn4.us-east-1.rds.amazonaws.com',
+        'HOST': '',
         'PORT': '5432',
     }
 }
@@ -159,8 +159,8 @@ MEDIA_ROOT =os.path.join(BASE_DIR,"media/")
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-AWS_S3_ACCESS_KEY_ID = "AKIAJ53NY5B4MPOSFUDQ"
-AWS_S3_SECRET_ACCESS_KEY = "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"
+AWS_S3_ACCESS_KEY_ID = ""
+AWS_S3_SECRET_ACCESS_KEY = ""
 
 AWS_STORAGE_BUCKET_NAME = 'brite-core'
 
