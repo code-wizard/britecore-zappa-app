@@ -33,9 +33,9 @@
             <ng-container *ngIf="a.type==='boolean'">
               <div class="radio"*ngFor="let e of a.options" >
                 <label><input type="radio"
-                              name="{{e.value}}" [value]="e.value"
+                              name="{{a.label}}" [value]="e.value"
 
-                              [attr.required]="a.required"> {{a.label}} </label>
+                              [attr.required]="a.required"> {{e.value}} </label>
               </div>
 
             </ng-container>
