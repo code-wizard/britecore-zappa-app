@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <base href="/">
+    <title>Britecore-app</title>
+    {% csrf_token %}
+    <script>
+        var AWS_STATIC = '{{ static_url  }}'
+
+    </script>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+    {% load js %}
+    {% django_js jquery=False i18n=False %}
+</head>
+
+<body>
+
+    <app-root ></app-root>
+
+    <script type="text/javascript" src="{% static 'angular/inline.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular/polyfills.bundle.js' %}"></script>
+
+
+
+    <script type="text/javascript" src="{% static 'angular/styles.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular/vendor.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular/main.bundle.js' %}"></script>
+
+
+
+
+</body>
+</html>

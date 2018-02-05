@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>All Risk Types</h1>
+      <a routerLink="/new-risk-type">Click here to create new risk type</a>
+
+      <table class="table table-stripe">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let r of (riskList|async)?.results|paginate:{itemsPerPage:pageSize,
+                                                                        id:'riskList',
+                                                                        totalItems:(riskList|async)?.count,
+                                                                        currentPage:currentPage}">
+          <td>
+            <a routerLink="/subscribe/{{r.id}}">{{r.name}}</a>
+          </td>
+        </tr>
+      </table>
+      <div class="text-right margin-top-10">
+        <pagination-controls  class="pagination"
+                              (pageChange)="pageChanged($event)"
+                              maxSize="7"
+                              id="riskList"
+                              directionLinks="true"
+                              autoHide="true"
+                              screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+        <!--<dir-pagination-controls pagination-id="question-bank" on-page-change="questionBankPageChanged(newPageNumber)"></dir-pagination-controls>-->
+      </div>
+    </div>
+  </div>
+</div>

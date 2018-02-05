@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "britecore.settings",
+//        "profile_name": null,
+        "project_name": "britecore",
+        "runtime": "python3.6",
+        "s3_bucket": "brite-core-3",
+        "slim_handler":true,
+        "manage_roles": true, // Have Zappa automatically create and define IAM execution roles and policies. Default true. If false, you must define your own IAM Role and role_name setting.
+        "memory_size": 1512,
+        "timeout_seconds": 300,
+        "manage_roles": true, // Disable Zappa client managing roles.
+        "certificate_arn": "arn:aws:acm:us-east-1:569456780450:certificate/ce33cf6a-74b4-46cd-a9b5-5fa1de1281cb",
+        "domain": "www.teachsity.com",
+//        "role_name": "MyLambdaRole", // Name of your Zappa execution role. Optional, default: <project_name>-<env>-ZappaExecutionRole.
+//        "role_arn": "arn:aws:iam::569456780450:role/MyLambdaRole", // ARN of your Zappa execution role. Optional.
+         "vpc_config" : {
+            "SubnetIds": [ "subnet-d1a0dc8c","subnet-fdff87d2","subnet-9a0e48a5","subnet-6b85ad0f",
+                "subnet-874d4dcc","subnet-3d874632" ], // use the private subnet
+            "SecurityGroupIds": [ "sg-6d72cb1a"] //,"sg-5f5fe628"
+
+        }
+    }
+}
+
